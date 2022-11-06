@@ -13,7 +13,7 @@ namespace esphome {
 namespace dmamatrix_display {
 
 
-class DmaMatrixDisplay : public PollingComponent, public display::DisplayBuffer {
+class DmaMatrixDisplay : public PollingComponent, public display::DisplayBuffer  {
  public:
   void display();
   float get_setup_priority() const override;
@@ -21,10 +21,7 @@ class DmaMatrixDisplay : public PollingComponent, public display::DisplayBuffer 
   void update() override;
   void fill(Color color) override;
   
-  int get_display_type (){
-    return 3;
-  }
-
+  display::DisplayType get_display_type() override { return display::DisplayType::DISPLAY_TYPE_COLOR; }
 
   // void set_pin_latch(IDFInternalGPIOPin *pin_latch);
   // void set_pin_r1(IDFInternalGPIOPin *pin_r1);
