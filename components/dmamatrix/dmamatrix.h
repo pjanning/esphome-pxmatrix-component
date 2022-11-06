@@ -21,7 +21,7 @@ class DmaMatrixDisplay : public PollingComponent, public display::DisplayBuffer 
   void update() override;
   void fill(Color color) override;
   
-  DisplayType get_display_type (){
+  enum DisplayType get_display_type (){
     return DisplayType::DISPLAY_TYPE_COLOR;
   }
 
