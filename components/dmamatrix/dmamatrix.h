@@ -2,7 +2,6 @@
 
 #include "esphome/core/component.h"
 #include "esphome/components/display/display_buffer.h"
-#include "esphome/components/display/display_type.h"
 #include "esphome/core/log.h"
 #include "esphome/core/gpio.h"
 #include "esphome/core/color.h"
@@ -21,7 +20,9 @@ class DmaMatrixDisplay : public PollingComponent, public display::DisplayBuffer 
   void setup() override;
   void update() override;
   void fill(Color color) override;
-  DisplayType get_display_type () override;
+  DisplayType get_display_type (){
+    return DisplayType::DISPLAY_TYPE_COLOR;
+  }
 
   // void set_pin_latch(IDFInternalGPIOPin *pin_latch);
   // void set_pin_r1(IDFInternalGPIOPin *pin_r1);
