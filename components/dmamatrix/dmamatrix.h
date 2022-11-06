@@ -44,6 +44,7 @@ class DmaMatrixDisplay : public PollingComponent, public display::DisplayBuffer 
   void draw_absolute_pixel_internal(int x, int y, Color color) override;
   int get_width_internal() override;
   int get_height_internal() override;
+  DisplayType get_display_type () override;
 
   MatrixPanel_I2S_DMA *dma_matrix_ ;
 
@@ -62,7 +63,7 @@ class DmaMatrixDisplay : public PollingComponent, public display::DisplayBuffer 
   // IDFInternalGPIOPin *pin_e_{nullptr};
   // IDFInternalGPIOPin *pin_oe_{nullptr};
 
-  uint8_t width_ = 64;
+  uint8_t width_ = 128;
   uint8_t height_ = 64;
   uint8_t brightness_ = 255;
 };

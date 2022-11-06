@@ -13,7 +13,7 @@
 #define B_PIN 13 
 #define C_PIN 14
 #define D_PIN 27
-#define E_PIN 22
+#define E_PIN 18
 #define LAT_PIN 33
 #define OE_PIN 32
 #define CLK_PIN 25
