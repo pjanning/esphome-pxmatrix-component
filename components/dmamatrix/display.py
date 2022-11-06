@@ -35,7 +35,7 @@ DRIVER_CHIPS = {
 CONFIG_SCHEMA = cv.All(
     display.FULL_DISPLAY_SCHEMA.extend({
         cv.GenerateID(): cv.declare_id(pxmatrix_gpio),
-        cv.Optional(CONF_WIDTH, default="128"): cv.uint8_t,
+        cv.Optional(CONF_WIDTH, default="64"): cv.uint8_t,
         cv.Optional(CONF_HEIGHT, default="64"): cv.uint8_t,
         cv.Optional(CONF_BRIGHTNESS, default="255"): cv.uint8_t,
         # cv.Optional(CONF_PIN_LATCH, default="GPIO33"): pins.gpio_output_pin_schema,

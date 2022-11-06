@@ -64,7 +64,7 @@ class DmaMatrixDisplay : public PollingComponent, public display::DisplayBuffer 
   // IDFInternalGPIOPin *pin_e_{nullptr};
   // IDFInternalGPIOPin *pin_oe_{nullptr};
 
-  uint8_t width_ = 128;
+  uint8_t width_ = 64;
   uint8_t height_ = 64;
   uint8_t brightness_ = 255;
 };
