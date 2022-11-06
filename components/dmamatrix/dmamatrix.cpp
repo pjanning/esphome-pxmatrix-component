@@ -34,7 +34,7 @@ void DmaMatrixDisplay::setup() {
   HUB75_I2S_CFG mxconfig(
       width_,   // module width
       height_,   // module height
-      1,    // Chain length
+      2,    // Chain length
       _pins, // pin mapping
       HUB75_I2S_CFG::FM6124
     );
