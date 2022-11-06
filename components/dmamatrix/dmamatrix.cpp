@@ -2,21 +2,23 @@
 #include "esphome/core/application.h"
 
 
-//for some reason get pin is not working i didnt care and use this work around.
-#define B1_PIN 17
-#define B2_PIN 4
-#define G1_PIN 2
-#define G2_PIN 15
-#define R1_PIN 16
-#define R2_PIN 12
-#define A_PIN 26
-#define B_PIN 13 
-#define C_PIN 14
-#define D_PIN 27
-#define E_PIN 18
-#define LAT_PIN 33
-#define OE_PIN 32
-#define CLK_PIN 25
+#define R1_PIN_DEFAULT  25
+#define G1_PIN_DEFAULT  26
+#define B1_PIN_DEFAULT  27
+#define R2_PIN_DEFAULT  14
+#define G2_PIN_DEFAULT  12
+#define B2_PIN_DEFAULT  13
+
+#define A_PIN_DEFAULT   23
+#define B_PIN_DEFAULT   19
+#define C_PIN_DEFAULT   5
+#define D_PIN_DEFAULT   17
+#define E_PIN_DEFAULT   18 
+          
+#define LAT_PIN_DEFAULT 4
+#define OE_PIN_DEFAULT  15
+
+#define CLK_PIN_DEFAULT 16
 
 static const char *TAG = "dmamatrix_display";
 
