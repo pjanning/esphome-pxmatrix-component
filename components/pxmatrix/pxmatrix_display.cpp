@@ -1,5 +1,6 @@
 #include "pxmatrix.h"
 #include "esphome/core/application.h"
+#include "esp_log.h"
 
 
 static const char *TAG = "pxmatrix_display";

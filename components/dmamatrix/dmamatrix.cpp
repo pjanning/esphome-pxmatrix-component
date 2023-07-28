@@ -1,5 +1,6 @@
 #include "dmamatrix.h"
 #include "esphome/core/application.h"
+#include "esp_log.h"
 
 #define R1_PIN 25
 #define G1_PIN 26

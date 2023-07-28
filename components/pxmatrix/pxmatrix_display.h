@@ -6,6 +6,7 @@
 #include "esphome/core/gpio.h"
 #include "esphome/core/color.h"
 #include "esphome/components/display/display_color_utils.h"
+#include "esp_log.h"
 
 
 #define PxMATRIX_double_buffer true
