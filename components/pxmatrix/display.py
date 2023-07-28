@@ -151,9 +151,14 @@ def to_code(config):
 
     # https://github.com/2dom/PxMatrix/blob/master/PxMatrix.h
     cg.add_library("PxMatrix LED MATRIX library", "1.8.2")
+
+    #PJ added
+    cg.add_library("mrfaptastic/ESP32 HUB75 LED MATRIX PANEL DMA Display", "3.0.9")
+
     cg.add_library("Wire", "1.0")
     cg.add_library("Spi", "1.0")
     cg.add_library("Ticker", "1.0")
-    cg.add_library("Adafruit BusIO", "1.9.9")
+    cg.add_library("Adafruit BusIO", "1.11.7")
     # Adafruit GF https://github.com/adafruit/Adafruit-GFX-Library/releases
     cg.add_library("13", "1.10.12")
+
