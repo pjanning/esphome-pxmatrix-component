@@ -103,5 +103,7 @@ int PxmatrixDisplay::get_width_internal() { return this->width_; }
 
 int PxmatrixDisplay::get_height_internal() { return this->height_; }
 
+display::DisplayType PxmatrixDisplay::get_display_type() { return display::DisplayType::DISPLAY_TYPE_COLOR; } // <<-- add this line
+
 }  // namespace pxmatrix_display
 }  // namespace esphome
