@@ -154,7 +154,7 @@ def to_code(config):
     cg.add_library("Wire", "1.0")
     cg.add_library("Spi", "1.0")
     cg.add_library("Ticker", "1.0")
-    cg.add_library("adafruit/Adafruit BusIO", "1.14.2")
-    cg.add_library("adafruit/Adafruit GFX Library", "1.11.7")
+    cg.add_library("Adafruit BusIO", "1.14.2")
+    cg.add_library("Adafruit GFX Library", "1.11.7")
     # Adafruit GF https://github.com/adafruit/Adafruit-GFX-Library/releases
     cg.add_library("13", "1.10.12")
