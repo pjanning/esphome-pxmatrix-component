@@ -150,11 +150,11 @@ def to_code(config):
         cg.add(var.set_mux_delay(config[CONF_MULTIPLEXER_DELAY]))
 
     # https://github.com/2dom/PxMatrix/blob/master/PxMatrix.h
-    cg.add_library("PxMatrix LED MATRIX library", "1.8.2")
+    
     cg.add_library("Wire", "1.0")
     cg.add_library("Spi", "1.0")
     cg.add_library("Ticker", "1.0")
-
+    cg.add_library("PxMatrix LED MATRIX library", "1.8.2")
     #cg.add_library("Adafruit BusIO", "1.14.2")
     cg.add_library("Adafruit GFX Library", "1.11.7")
 
