@@ -22,9 +22,10 @@
 
 static const char *TAG = "dmamatrix_display";
 
+using esphome::esp_log_printf_;
+
 namespace esphome {
 namespace dmamatrix_display {
-  using esphome::esp_log_printf_;
 
 void display_updater() {  }
 
