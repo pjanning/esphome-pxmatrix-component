@@ -6,7 +6,6 @@
 #include "esphome/core/gpio.h"
 #include "esphome/core/color.h"
 #include "esphome/components/display/display_color_utils.h"
-#include "esp_log.h"
 
 using esphome::esp_log_printf_;
 #include <ESP32-HUB75-MatrixPanel-I2S-DMA.h>  // NOLINT
