@@ -13,6 +13,9 @@
 namespace esphome {
 namespace dmamatrix_display {
 
+using esphome::esp_log_printf_;
+
+
 
 class DmaMatrixDisplay : public PollingComponent, public display::DisplayBuffer  {
  public:
