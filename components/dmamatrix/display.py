@@ -61,7 +61,7 @@ def to_code(config):
     var = cg.new_Pvariable(config[CONF_ID])
 
     #yield cg.register_component(var, config)
-    yield display.register_display(var, config)
+    #yield display.register_display(var, config)
 
     if CONF_LAMBDA in config:
         lambda_ = yield cg.process_lambda(config[CONF_LAMBDA], [(display.DisplayBufferRef, 'it')],
