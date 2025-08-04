@@ -29,27 +29,25 @@ namespace dmamatrix_display {
 
 void display_updater() {  }
 
-float DmaMatrixDisplay::get_setup_priority() const { return setup_priority::PROCESSOR; }
+float DmaMatrixDisplay::get_setup_priority() const {
+  return setup_priority::AFTER_WIFI;
+}
 
 void DmaMatrixDisplay::setup() {
   ESP_LOGCONFIG(TAG, "Starting setup...");
 
-  HUB75_I2S_CFG::i2s_pins _pins={R1_PIN, G1_PIN, B1_PIN, R2_PIN, G2_PIN, B2_PIN, A_PIN, B_PIN, C_PIN, D_PIN, E_PIN, LAT_PIN, OE_PIN, CLK_PIN};
-  HUB75_I2S_CFG mxconfig(
-      width_,   // module width
-      height_,   // module height
-      2,    // Chain length
-      _pins, // pin mapping
-      HUB75_I2S_CFG::FM6124
-    );
+  HUB75_I2S_CFG::i2s_pins _pins = {R1_PIN, G1_PIN, B1_PIN, R2_PIN, G2_PIN, B2_PIN,
+                                   A_PIN, B_PIN, C_PIN, D_PIN, E_PIN,
+                                   LAT_PIN, OE_PIN, CLK_PIN};
 
+  HUB75_I2S_CFG mxconfig(width_, height_, 2, _pins, HUB75_I2S_CFG::FM6124);
   mxconfig.double_buff = true;
   mxconfig.clkphase = false;
 
   this->dma_matrix_ = new MatrixPanel_I2S_DMA(mxconfig);
   dma_matrix_->begin();
-  dma_matrix_->setBrightness8(this->brightness_); //0-255
-  dma_matrix_->clearScreen();
+  dma_matrix_->setBrightness8(this->brightness_);
+
   ESP_LOGI(TAG, "Finished Setup");
 }
 
@@ -59,14 +57,22 @@ void HOT DmaMatrixDisplay::draw_absolute_pixel_internal(int x, int y, Color colo
 }
 
 void DmaMatrixDisplay::fill(Color color) {
-  uint16_t matrix_color = display::ColorUtil::color_to_565(color,  display::ColorOrder::COLOR_ORDER_BGR);
+  if (!this->dma_matrix_) return;
+  uint16_t matrix_color = display::ColorUtil::color_to_565(color, display::ColorOrder::COLOR_ORDER_BGR);
   this->dma_matrix_->fillScreen(matrix_color);
 }
 
 void DmaMatrixDisplay::update() {
+  static bool first_frame = true;
+  if (first_frame) {
+    this->dma_matrix_->fillScreen(0x0000);  // oder Color::BLACK
+    first_frame = false;
+  }
+
   this->dma_matrix_->flipDMABuffer();
   this->do_update_();
 }
+
 
 void HOT DmaMatrixDisplay::display() {}
 
